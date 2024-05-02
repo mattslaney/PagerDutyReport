@@ -4,6 +4,7 @@ clean() {
   rm -r ./dist
   rm -r ./wasm/pkg
   rm -r ./wasm/target
+  rm -r ./site/src/pkg
   rm -r ./site/target
 }
 
@@ -32,6 +33,8 @@ if [[ $# -eq 0 ]]; then
   build_wasm
   build_site
   deploy
+elif [[ "$1" -eq "-clean" ]]; then
+  clean
 else
   for arg in "$@"; do
     case $arg in
