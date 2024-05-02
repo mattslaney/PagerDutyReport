@@ -16,6 +16,7 @@
             packages = with pkgs; [
                 nodejs_20
                 typescript
+                rustup
             ];
 
             shellHook = ''
