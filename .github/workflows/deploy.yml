@@ -38,8 +38,7 @@ jobs:
         run: |
           cd wasm
           wasm-pack build --target web
-      - name: List Dir
-      - run: tree .
+          tree .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
