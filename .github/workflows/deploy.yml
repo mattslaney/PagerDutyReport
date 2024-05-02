@@ -38,7 +38,7 @@ jobs:
         run: |
           cd wasm
           wasm-pack build --target web
-          cp pkg ../dist
+          cp -r pkg/ ../dist/
       - name: List project tree
         run: |
           tree .
