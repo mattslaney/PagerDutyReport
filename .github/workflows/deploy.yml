@@ -38,14 +38,14 @@ jobs:
         run: |
           cd wasm
           wasm-pack build --target web
-          tree .
+          cp pkg ../dist
       - name: List project tree
         run: |
           tree .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./pkg
+          path: ./dist
 
   # Deployment job
   deploy:
