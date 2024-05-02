@@ -7,7 +7,7 @@
   </head>
   <body>
     <script type="module">
-      import init, { greet } from "./pkg/wasm.js";
+      import init, { log_msg } from "./pkg/wasm.js";
       init().then(() => {
         log_msg("WebAssembly");
       });
