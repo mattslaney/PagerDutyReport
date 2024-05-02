@@ -41,7 +41,7 @@ jobs:
           cd ..
       - name: Build site
         run: |
-          cp -r wasm/pkg site/pkg
+          cp -r wasm/pkg site/src/pkg
           cd site/src
           tsc
           cp -r *.html ../target/
