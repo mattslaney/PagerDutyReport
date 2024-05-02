@@ -16,7 +16,6 @@ build_wasm() {
 build_site() {
   cd site/src
   tsc
-  cp -r ../../wasm/pkg ./pkg
   cp -r *.html ../target/
   cp -r *.css ../target/
   cd ../..
