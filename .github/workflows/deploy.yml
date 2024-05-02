@@ -40,7 +40,7 @@ jobs:
           wasm-pack build --target web
           tree .
       - name: List project tree
-      - run: |
+        run: |
           tree .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
