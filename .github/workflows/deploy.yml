@@ -36,24 +36,17 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build wasm
         run: |
-          cd wasm
-          wasm-pack build --target web
-          cd ..
+          wasm-pack build --target web --out-dir ./dist/pkg
       - name: Build site
         run: |
-          cd site/src
-          cp -r ../../wasm/pkg ./pkg
           tsc
-          cp -r *.html ../target/
-          cp -r *.css ../target/
+          cp -r web/*.html ./dist/
+          cp -r web/*.css ./dist/
+          cp -r web/*.js ./dist/
           cd ../..
       - name: List project tree
         run: |
           tree .
-      - name: Create dist
-        run: |
-          cp -r ./site/target ./dist
-          cp -r ./wasm/pkg ./dist/pkg
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
