@@ -1,4 +1,4 @@
-import init, { alert_rs, render_file } from "./pkg/wasm.js";
+import init, { alert_rs, process_csv } from "./pkg/wasm.js";
 
 init().then(() => {
   alert_rs("WASM loaded");
@@ -15,7 +15,7 @@ function handleFile(e) {
 
     reader.onload = function(event) {
       const contents = event.target.result;
-      render_file(contents); 
+      process_csv(contents);
     };
 
     reader.onerror = function(event) {
